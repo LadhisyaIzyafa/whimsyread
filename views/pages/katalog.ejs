@@ -1,0 +1,27 @@
+<%- include('../partials/header', { title: 'Katalog' }) %>
+
+<section class="page-heading">
+  <p class="eyebrow">THE BOOKSHELF</p>
+  <h1>Find your next read.</h1>
+  <p>Jelajahi koleksi buku yang tersedia di WhimSyRead.</p>
+</section>
+
+<section class="catalog-section">
+  <div class="section-heading">
+    <h2>Our collection</h2>
+    <a href="/tambah-data" class="text-link">+ Tambah Buku</a>
+  </div>
+
+  <div class="book-grid">
+    <% books.forEach((book) => { %>
+      <article class="book-card">
+        <span class="book-category"><%= book.category %></span>
+        <h3><%= book.title %></h3>
+        <p class="book-author"><%= book.author %></p>
+        <p class="book-year">Tahun terbit: <%= book.year %></p>
+      </article>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('../partials/footer') %>

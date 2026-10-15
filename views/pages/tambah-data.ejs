@@ -1,0 +1,61 @@
+<%- include('../partials/header', { title: 'Tambah Buku' }) %>
+
+<section class="page-heading">
+  <p class="eyebrow">ADD TO THE BOOKSHELF</p>
+  <h1>A new story begins.</h1>
+  <p>Tambahkan informasi buku ke dalam katalog WhimSyRead.</p>
+</section>
+
+<section class="form-section">
+  <form action="/tambah-data" method="POST" class="book-form">
+    <div class="form-group">
+      <label for="title">Judul Buku</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        placeholder="Masukkan judul buku"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="author">Nama Penulis</label>
+      <input
+        type="text"
+        id="author"
+        name="author"
+        placeholder="Masukkan nama penulis"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="year">Tahun Terbit</label>
+      <input
+        type="number"
+        id="year"
+        name="year"
+        placeholder="Contoh: 2024"
+        min="1"
+        required
+      >
+    </div>
+
+    <div class="form-group">
+      <label for="category">Kategori Buku</label>
+      <select id="category" name="category" required>
+        <option value="">Pilih kategori</option>
+        <option value="Fiksi">Fiksi</option>
+        <option value="Romansa">Romansa</option>
+        <option value="Klasik">Klasik</option>
+        <option value="Nonfiksi">Nonfiksi</option>
+        <option value="Fantasi">Fantasi</option>
+      </select>
+    </div>
+
+    <button type="submit" class="button">Tambahkan Buku</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>
